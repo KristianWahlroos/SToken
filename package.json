@@ -1,7 +1,7 @@
 {
-  "name": "SlaveToken",
+  "name": "slavetoken",
   "version": "1.0.0",
-  "description": "",
+  "description": "fun crypto collectible",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -9,10 +9,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KristianWahlroos/SToken.git"
+  },
+  "author": "Kristian Wahlroos",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KristianWahlroos/SToken/issues"
+  },
+  "homepage": "https://github.com/KristianWahlroos/SToken#readme",
   "dependencies": {
-    "solc": "^0.5.8",
     "web3": "^1.0.0-beta.55"
   }
 }

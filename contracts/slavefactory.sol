@@ -20,8 +20,8 @@ contract SlaveFactory is CustomFunctions, Ownable{
     mapping (uint => address) public slaveToOwner;
     mapping (address => uint) ownerSlaveCount;
 
-    function _createSlave(address _owner, uint32 _maxLevel) internal {
-        uint id = slaves.push(Slave(uint32(_generateRandomNumber(_maxLevel)), uint32(now + cooldownTime)));
+    function _createSlave(address _owner, uint32 _maxLevel) public payable{
+        uint id = slaves.push(Slave(uint32(_generateRandomNumber(_maxLevel)), uint32(now + cooldownTime))) - 1;
         slaveToOwner[id] = _owner;
         ownerSlaveCount[_owner] = ownerSlaveCount[_owner].add(1);
         emit NewSlave(id);
@@ -32,6 +32,9 @@ contract SlaveFactory is CustomFunctions, Ownable{
         _createSlave(msg.sender, 1);
     }
 
+    function setCooldownTime() public{
+        cooldownTime = 1 hours;
+    }
 
 
 }

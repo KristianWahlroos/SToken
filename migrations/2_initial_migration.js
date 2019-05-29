@@ -1,5 +1,5 @@
-var Counter = artifacts.require("../tokens/slavetoken.sol");
+var SlaveToken = artifacts.require("./slavetoken.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(Counter);
+  deployer.deploy(SlaveToken);
 };
