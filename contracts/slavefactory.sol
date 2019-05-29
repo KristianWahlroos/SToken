@@ -32,8 +32,8 @@ contract SlaveFactory is CustomFunctions, Ownable{
         _createSlave(msg.sender, 1);
     }
 
-    function setCooldownTime() public{
-        cooldownTime = 1 hours;
+    function setCooldownTime(uint _seconds) public onlyOwner{
+        cooldownTime = _seconds;
     }
 
 
