@@ -20,8 +20,8 @@ contract SlaveFactory is CustomFunctions, Ownable{
     mapping (uint => address) public slaveToOwner;
     mapping (address => uint) ownerSlaveCount;
 
-    function _createSlave(address _owner, uint32 _maxLevel) public payable{
-        uint id = slaves.push(Slave(uint32(_generateRandomNumber(_maxLevel)), uint32(now + cooldownTime))) - 1;
+    function _createSlave(address _owner, uint32 _level) public payable{
+        uint id = slaves.push(Slave(_level/2, uint32(now + cooldownTime))) - 1;
         slaveToOwner[id] = _owner;
         ownerSlaveCount[_owner] = ownerSlaveCount[_owner].add(1);
         emit NewSlave(id);
